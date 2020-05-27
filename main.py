@@ -23,5 +23,5 @@ if os.stat(filename).st_size == 0:
     WriteData.close()
 
 WriteData = open(filename, "a")
-WriteData.write(now.strftime("%Y.%m.%d %H:%M:%S")+","+str(btc_usd_req)+","+str(int(CZK_BTC))+"\n")
+WriteData.write("\n"+now.strftime("%Y.%m.%d %H:%M:%S")+","+str(btc_usd_req)+","+str(int(CZK_BTC)))
 WriteData.close()
