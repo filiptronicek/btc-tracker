@@ -1,0 +1,22 @@
+# /.github/workflows/daily.yml
+on:
+  schedule:
+    - cron:  '*/15 * * * *' # every second hour
+name: Update
+jobs:
+  build:
+    name: Update data daily
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - uses: actions/checkout@master
+    - name: Build
+      run: pip install -r "requirements.txt"
+    - name: Update rates
+      run: python main.py 
+    - uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
