@@ -1,2 +1,2 @@
-# btc-tracker
+# Bitcoin price tracker
  
