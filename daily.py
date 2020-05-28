@@ -12,7 +12,7 @@ CZK_BTC = btc_usd_req * usd_czk
 
 now = datetime.now()
 
-filename = "data/dta.csv"
+filename = "data/data.csv"
 
 if not os.path.isfile(filename) and not os.access(filename, os.R_OK):
     pf = open(filename, "w")
