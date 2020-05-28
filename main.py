@@ -2,14 +2,22 @@ import requests, json
 from datetime import datetime
 import os
 
-btc_usd_req = json.loads(requests.get("https://blockchain.info/ticker").text)
+key = os.environ.get('API_key')
+
+if key is None:
+    from key import api as key
+
+btc_usd_req = json.loads(requests.get("https://api.nomics.com/v1/currencies/ticker?key="+key+"&ids=BTC").text)
 usd_czk = (json.loads(requests.get("https://api.exchangeratesapi.io/latest?base=USD").text))
 
 
-btc_usd_req = btc_usd_req['USD']['sell']
+btc_usd_req = btc_usd_req[0]['price']
 usd_czk = usd_czk['rates']['CZK']
 
-CZK_BTC = btc_usd_req * usd_czk
+print(btc_usd_req)
+
+CZK_BTC = int(float(btc_usd_req)) * int(float(usd_czk))
+
 
 now = datetime.now()
 
