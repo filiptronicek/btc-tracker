@@ -2,7 +2,7 @@
  
 ![Update](https://github.com/filiptronicek/btc-tracker/workflows/Update/badge.svg)
 
-Use all this data, which is updated every five minutes on your next Machine Learning Project, a statistical analysis of the history and change in price of BitCoin.
+Use all this data, which is updated every five minutes on your next Machine Learning Project, a statistical analysis of the history and change in price of Bitcoin.
 
 # License
 This project and it's data is licensed by the [MIT License](https://github.com/filiptronicek/btc-tracker/blob/master/LICENSE)
