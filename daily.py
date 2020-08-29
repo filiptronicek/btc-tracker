@@ -3,10 +3,12 @@ from datetime import datetime
 import os
 
 btc_usd_req = json.loads(requests.get("https://blockchain.info/ticker").text)
-usd_czk = (json.loads(requests.get("https://api.exchangeratesapi.io/latest?base=USD").text))
+usd_czk = json.loads(
+    requests.get("https://api.exchangeratesapi.io/latest?base=USD").text
+)
 
-btc_usd_req = btc_usd_req['USD']['sell']
-usd_czk = usd_czk['rates']['CZK']
+btc_usd_req = btc_usd_req["USD"]["sell"]
+usd_czk = usd_czk["rates"]["CZK"]
 
 CZK_BTC = btc_usd_req * usd_czk
 
@@ -22,5 +24,7 @@ if os.stat(filename).st_size == 0:
     WriteData.close()
 
 WriteData = open(filename, "a")
-WriteData.write("\n"+now.strftime("%Y.%m.%d")+","+str(btc_usd_req)+","+str(int(CZK_BTC)))
+WriteData.write(
+    "\n" + now.strftime("%Y.%m.%d") + "," + str(btc_usd_req) + "," + str(int(CZK_BTC))
+)
 WriteData.close()
