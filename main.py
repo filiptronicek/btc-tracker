@@ -38,6 +38,7 @@ if os.stat(filename).st_size == 0:
     WriteData.close()
 
 WriteData = open(filename, "a")
+print(CZK_BTC)
 WriteData.write(
     "\n"
     + time.time()
