@@ -44,6 +44,6 @@ WriteData.write(
     + ","
     + str(btc_usd_req)
     + ","
-    + str((CZK_BTC))
+    + str(CZK_BTC)
 )
 WriteData.close()
