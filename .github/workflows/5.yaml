@@ -1,7 +1,8 @@
 # /.github/workflows/daily.yml
 on:
-  schedule:
-    - cron:  '*/5 * * * *' # every 5 minutes
+  release:
+  #schedule:
+    #- cron:  '*/5 * * * *' # every 5 minutes
 name: Update
 jobs:
   build:
