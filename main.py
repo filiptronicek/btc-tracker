@@ -25,7 +25,6 @@ print(btc_usd_req)
 
 CZK_BTC = int(float(btc_usd_req)) * int(float(usd_czk))
 
-
 now = datetime.now()
 
 filename = "data/stats/" + now.strftime("%Y.%m") + ".csv"
@@ -38,7 +37,6 @@ if os.stat(filename).st_size == 0:
     WriteData.close()
 
 WriteData = open(filename, "a")
-print(str(int(CZK_BTC)))
 WriteData.write(
     "\n"
     + time.time()
