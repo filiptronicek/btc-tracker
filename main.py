@@ -39,10 +39,10 @@ if os.stat(filename).st_size == 0:
 WriteData = open(filename, "a")
 WriteData.write(
     "\n"
-    + time.time()
+    + now.strftime("%Y.%m.%d %H:%M:%S")
     + ","
     + str(btc_usd_req)
     + ","
-    + str(CZK_BTC)
+    + str(int(CZK_BTC))
 )
 WriteData.close()
