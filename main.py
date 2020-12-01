@@ -1,6 +1,7 @@
 import requests, json
 from datetime import datetime
 import os
+import time
 
 key = os.environ.get("API_key")
 
@@ -39,7 +40,7 @@ if os.stat(filename).st_size == 0:
 WriteData = open(filename, "a")
 WriteData.write(
     "\n"
-    + now.strftime("%Y.%m.%d %H:%M:%S")
+    + time.time()
     + ","
     + str(btc_usd_req)
     + ","
