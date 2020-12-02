@@ -6,3 +6,7 @@ Use all this data, which is updated every five minutes on your next Machine Lear
 
 # License
 This project and it's data is licensed by the [MIT License](https://github.com/filiptronicek/btc-tracker/blob/master/LICENSE)
+
+# Attribution
+
+[Crypto Market Cap & Pricing Data Provided By Nomics.](https://nomics.com)
